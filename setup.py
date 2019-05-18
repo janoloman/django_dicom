@@ -7,6 +7,11 @@ with open("README.md", "r") as fh:
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+
+with open('requirements.txt','r') as fh:
+    requirements = fh.read().splitlines()
+    print (requirements)
+
 setup(
     name="django_dicom",
     version="0.1.0",
@@ -30,4 +35,5 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.6",
     ],
+    install_requires=requirements,
 )
