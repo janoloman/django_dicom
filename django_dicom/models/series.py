@@ -77,6 +77,7 @@ class Series(DicomEntity):
         models.CharField(max_length=2, choices=ScanningSequence.choices()),
         size=5,
         help_text=help_text.SCANNING_SEQUENCE,
+        blank=True, null=True
     )
     sequence_variant = ChoiceArrayField(
         models.CharField(max_length=4, choices=SequenceVariant.choices()),
