@@ -100,7 +100,8 @@ class LocalImport:
 
         for directory, _, files in os.walk(self.path):
             if extension:
-                files = [f for f in files if f.endswith(f".{extension}")]
+                files = [f for f in files if 
+                filetype.guess_extension(os.path.join(directory, f)) == extension]
             for file_name in files:
                 yield os.path.join(directory, file_name)
 
