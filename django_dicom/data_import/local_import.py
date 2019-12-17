@@ -1,5 +1,6 @@
 import os
 import zipfile
+import filetype
 
 from django_dicom.data_import.import_image import ImportImage
 from django_dicom.models import Image
