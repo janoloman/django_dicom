@@ -83,11 +83,13 @@ class Series(DicomEntity):
         models.CharField(max_length=4, choices=SequenceVariant.choices()),
         size=6,
         help_text=help_text.SEQUENCE_VARIANT,
+        blank=True, null=True
     )
     pixel_spacing = ArrayField(
         models.FloatField(validators=[MinValueValidator(0)]),
         size=2,
         help_text=help_text.PIXEL_SPACING,
+        blank=True, null=True
     )
     slice_thickness = models.FloatField(
         validators=[MinValueValidator(0)],
