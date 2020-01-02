@@ -67,8 +67,12 @@ class Patient(DicomEntity):
         str
             Patient's first and last names.
         """
+        if (not self.given_name):
+            return self.family_name 
 
-        return f"{self.given_name} {self.family_name}"
+        else:
+            return f"{self.given_name} {self.family_name}"
+
 
     def update_patient_name(self, header: HeaderInformation) -> None:
         """
